@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
@@ -139,6 +140,20 @@
         .course-toggle-btns { display: flex; gap: 10px; margin: 14px 0; }
         .course-toggle-btn { padding: 8px 24px; border: 2px solid var(--border); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; background: var(--white); font-family: 'Poppins', sans-serif; transition: all .2s; }
         .course-toggle-btn:hover, .course-toggle-btn.active { border-color: var(--primary); color: var(--primary); background: #fff5f5; }
+
+        /* ===== CHART ===== */
+        .chart-wrap { max-width: 280px; margin: 14px auto; background: #fafbff; border-radius: 8px; padding: 16px; border: 1px solid #eee; }
+        .chart-wrap h4 { text-align: center; font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+
+        /* ===== STATS CARDS ===== */
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0; }
+        .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 14px 10px; text-align: center; }
+        .stat-card .stat-num { font-size: 20px; font-weight: 700; color: var(--primary); line-height: 1.2; }
+        .stat-card .stat-label { font-size: 11px; color: var(--text-light); margin-top: 3px; font-weight: 500; }
+
+        /* ===== RECRUITER TAGS ===== */
+        .recruiter-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        .recruiter-tag { background: #f5f6fa; border: 1px solid #e0e4ef; border-radius: 14px; padding: 4px 12px; font-size: 12px; color: #555; font-weight: 500; }
 
         /* ===== FAQ ACCORDION ===== */
         .faq-item { border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px; overflow: hidden; }
@@ -274,6 +289,7 @@
             .key-info-item { flex: 0 0 33.33%; border-bottom: 1px solid #e8c8c8; }
             .key-info-item:nth-child(3) { border-right: none; }
             .tab-link { padding: 10px 12px; font-size: 12px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
             .college-tabs.sticky { top: 54px; }
             .section-block { padding: 16px; margin-bottom: 14px; }
             .section-block h2 { font-size: 16px; }
@@ -491,6 +507,49 @@
                     <button class="btn-apply apply-trigger" style="margin-top:10px;">Apply Now</button>
                 </section>
 
+                <!-- ADMISSION CHANNELS -->
+                <section class="section-block" style="overflow:hidden;">
+                    <h2>Undergraduate (B.E.) Admission Channels</h2>
+                    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+                        <div style="flex:1;min-width:300px;">
+                            <div class="table-wrap"><table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Admission Channel</th>
+                                        <th>Eligibility Criteria</th>
+                                        <th>Selection Process</th>
+                                        <th>Seat Distribution (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>KCET (Karnataka Common Entrance Test)</strong></td>
+                                        <td>Passed 10+2 with PCM &amp; English, minimum <strong>45%</strong> aggregate (<strong>40%</strong> for SC/ST/OBC Karnataka).</td>
+                                        <td>KEA counselling based on KCET rank</td>
+                                        <td><strong>45%</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>COMEDK-UGET</strong></td>
+                                        <td>Open to all Indian nationals. 10+2 with PCM &amp; English, minimum <strong>45%</strong>.</td>
+                                        <td>COMEDK ranking &amp; centralized counselling</td>
+                                        <td><strong>30%</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Management / Institutional Quota</strong></td>
+                                        <td>10+2 with PCM and minimum <strong>45%</strong> aggregate.</td>
+                                        <td>Academic merit &amp; interview by RVCE</td>
+                                        <td><strong>25%</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table></div>
+                        </div>
+                        <div class="chart-wrap">
+                            <h4>B.E. Seat Distribution</h4>
+                            <canvas id="ugChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- HIGHLIGHTS -->
                 <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) - Highlights</h2>
@@ -513,6 +572,45 @@
                         <button class="course-toggle-btn">M.Tech</button>
                         <button class="course-toggle-btn">MCA</button>
                     </div>
+
+                    <h3>Undergraduate (B.E.) Programs &ndash; Fees Structure</h3>
+                    <div class="table-wrap"><table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Duration</th>
+                                <th>Intake</th>
+                                <th>Fees (KCET)</th>
+                                <th>Fees (COMEDK)</th>
+                                <th>Fees (Management Quota)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Computer Science &amp; Engineering</td><td>4 Years</td><td>180</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                            <tr><td>Electronics &amp; Communication Engineering</td><td>4 Years</td><td>180</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                            <tr><td>Mechanical Engineering</td><td>4 Years</td><td>180</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                            <tr><td>Civil Engineering</td><td>4 Years</td><td>120</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                            <tr><td>Electrical &amp; Electronics Engineering</td><td>4 Years</td><td>120</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                            <tr><td>Information Science &amp; Engineering</td><td>4 Years</td><td>120</td><td>&#8377;1,25,000</td><td>&#8377;2,81,677</td><td>As per management norms</td></tr>
+                        </tbody>
+                    </table></div>
+
+                    <h3>Postgraduate Programs (M.Tech / MBA / MCA)</h3>
+                    <div class="table-wrap"><table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Program</th>
+                                <th>Duration</th>
+                                <th>Intake</th>
+                                <th>Fees (Per Year)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>M.Tech (Various Specializations)</td><td>2 Years</td><td>18-30 per branch</td><td>&#8377;1,20,000</td></tr>
+                            <tr><td>Master of Computer Applications (MCA)</td><td>3 Years</td><td>60</td><td>&#8377;1,20,000</td></tr>
+                            <tr><td>Master of Business Administration (MBA)</td><td>2 Years</td><td>120</td><td>&#8377;1,50,000</td></tr>
+                        </tbody>
+                    </table></div>
                     <a href="#" class="know-more">Know more &raquo;</a>
                     <div style="clear:both;"></div>
                 </section>
@@ -563,6 +661,12 @@
                 <!-- PLACEMENTS -->
                 <section class="section-block" id="placements">
                     <h2>RV College of Engineering Bangalore (RVCE) - Placements</h2>
+                    <div class="stats-row">
+                        <div class="stat-card"><div class="stat-num">90-95%</div><div class="stat-label">Placement Rate</div></div>
+                        <div class="stat-card"><div class="stat-num">240+</div><div class="stat-label">Companies Visit</div></div>
+                        <div class="stat-card"><div class="stat-num">&#8377;6-8 LPA</div><div class="stat-label">Average Package</div></div>
+                        <div class="stat-card"><div class="stat-num">&#8377;52 LPA</div><div class="stat-label">Highest Package</div></div>
+                    </div>
                     <ul>
                         <li>RVCE has very good placements. More than 240 companies visit this college for the campus interview.</li>
                         <li>On average, 1400 students are placed every year.</li>
@@ -570,7 +674,19 @@
                         <li>The highest package offered is 52 Lakhs Per Annum.</li>
                         <li>The college has a placement cell that provides complete training in the interview process so students can be job-ready.</li>
                     </ul>
-                    <a href="#" class="know-more">Know more &raquo;</a>
+                    <h3>Top Recruiters</h3>
+                    <div class="recruiter-tags">
+                        <span class="recruiter-tag">Amazon</span>
+                        <span class="recruiter-tag">Infosys</span>
+                        <span class="recruiter-tag">TCS</span>
+                        <span class="recruiter-tag">Wipro</span>
+                        <span class="recruiter-tag">Microsoft</span>
+                        <span class="recruiter-tag">Google</span>
+                        <span class="recruiter-tag">Bosch</span>
+                        <span class="recruiter-tag">Deloitte</span>
+                        <span class="recruiter-tag">Intel</span>
+                    </div>
+                    <a href="#" class="know-more" style="margin-top:10px;">Know more &raquo;</a>
                     <div style="clear:both;"></div>
                 </section>
 
@@ -1214,6 +1330,33 @@
     });
     scrollBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Chart.js Pie Chart
+    window.addEventListener('DOMContentLoaded', function() {
+        var ctx = document.getElementById('ugChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['KCET \u2013 45%', 'COMEDK \u2013 30%', 'Management \u2013 25%'],
+                    datasets: [{
+                        data: [45, 30, 25],
+                        backgroundColor: ['#c0392b', '#f39c12', '#3498db'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { size: 13, weight: '600' } }
+                        }
+                    }
+                }
+            });
+        }
     });
 
     // Course Toggle Buttons
