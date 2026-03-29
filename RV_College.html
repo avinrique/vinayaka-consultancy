@@ -29,15 +29,16 @@
         /* ===== RESET & BASE ===== */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 14px; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 14px; overflow-x: hidden; }
+        html { overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         ul, ol { list-style: none; }
         img { max-width: 100%; height: auto; display: block; }
         .container { max-width: var(--maxw); margin: 0 auto; padding: 0 15px; }
 
         /* ===== TOP BAR ===== */
-        .top-bar { background: var(--navy); color: #fff; font-size: 13px; padding: 8px 0; }
-        .top-bar .container { display: flex; justify-content: flex-end; align-items: center; gap: 20px; }
+        .top-bar { background: var(--navy); color: #fff; font-size: 13px; padding: 8px 0; overflow: hidden; }
+        .top-bar .container { display: flex; justify-content: flex-end; align-items: center; gap: 20px; flex-wrap: wrap; }
         .top-bar-nav { display: flex; gap: 18px; align-items: center; }
         .top-bar-nav a { color: #ddd; transition: color .2s; font-size: 13px; }
         .top-bar-nav a:hover { color: #fff; }
@@ -112,11 +113,11 @@
         /* ===== TWO-COLUMN LAYOUT ===== */
         .content-wrap { padding: 20px 0; }
         .content-row { display: flex; gap: 24px; align-items: flex-start; }
-        .main-content { flex: 1; min-width: 0; }
+        .main-content { flex: 1; min-width: 0; max-width: 100%; overflow: hidden; }
         .sidebar { width: 320px; flex-shrink: 0; position: sticky; top: 120px; align-self: flex-start; }
 
         /* ===== SECTION BLOCKS ===== */
-        .section-block { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; margin-bottom: 18px; }
+        .section-block { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 20px 24px; margin-bottom: 18px; overflow: hidden; word-wrap: break-word; overflow-wrap: break-word; }
         .section-block h2 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; line-height: 1.4; }
         .section-block h3 { font-size: 15px; font-weight: 600; color: var(--navy); margin: 16px 0 10px; }
         .section-block p { font-size: 14px; color: #444; margin-bottom: 12px; line-height: 1.8; }
@@ -290,6 +291,32 @@
             .key-info-item:nth-child(3) { border-right: none; }
             .tab-link { padding: 10px 12px; font-size: 12px; }
             .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .section-block { padding: 14px 12px; }
+            .section-block h2 { font-size: 15px; }
+            .section-block p, .section-block ul li { font-size: 13px; }
+            .data-table { font-size: 12px; min-width: 500px; }
+            .chart-wrap { max-width: 100%; }
+            .content-wrap { padding: 12px 0; }
+            .sidebar-card { padding: 14px; }
+            .course-pills { gap: 5px; }
+            .course-pill { font-size: 11px; padding: 4px 10px; }
+            .featured-card { flex-direction: column; }
+            .featured-card .fc-img { width: 100%; height: 100px; }
+            .recruiter-tags { gap: 5px; }
+            .recruiter-tag { font-size: 11px; padding: 3px 10px; }
+            .faq-question { font-size: 13px; padding: 10px 12px; }
+            .faq-answer-inner { font-size: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+            .cta-band h2 { font-size: 17px; }
+            .college-hero h1 { font-size: 18px; padding: 0 10px; }
+            .college-hero .location-line { font-size: 13px; }
+            .rating-badge { top: -50px; right: 8px; padding: 6px 10px; }
+            .rating-badge .score { font-size: 14px; }
+            .rating-badge .stars { font-size: 11px; }
+            .rating-badge .rev-count { font-size: 9px; }
+            .key-info-item .ki-icon { font-size: 18px; }
+            .key-info-item .ki-label { font-size: 11px; }
+            .key-info-item .ki-value { font-size: 11px; }
             .college-tabs.sticky { top: 54px; }
             .section-block { padding: 16px; margin-bottom: 14px; }
             .section-block h2 { font-size: 16px; }
@@ -307,9 +334,18 @@
             .key-info-item:nth-child(2) { border-right: none; }
             .key-info-item:nth-child(3) { border-right: 1px solid #e8c8c8; }
             .key-info-item:nth-child(4) { border-right: none; }
-            .section-block h2 { font-size: 14px; }
-            .data-table { font-size: 12px; }
+            .section-block h2 { font-size: 13px; }
+            .section-block { padding: 12px 10px; }
+            .data-table { font-size: 11px; min-width: 400px; }
             .hero-banner-img { height: 150px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .stat-card .stat-num { font-size: 16px; }
+            .stat-card .stat-label { font-size: 9px; }
+            .stat-card { padding: 10px 6px; }
+            .college-hero h1 { font-size: 16px; }
+            .btn-apply { font-size: 13px; padding: 8px 22px; }
+            .sidebar-apply-card h3 { font-size: 15px; }
+            .course-toggle-btn { padding: 6px 16px; font-size: 12px; }
         }
     </style>
 </head>
