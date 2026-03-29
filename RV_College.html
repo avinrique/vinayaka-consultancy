@@ -142,6 +142,10 @@
         .course-toggle-btn { padding: 8px 24px; border: 2px solid var(--border); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; background: var(--white); font-family: 'Poppins', sans-serif; transition: all .2s; }
         .course-toggle-btn:hover, .course-toggle-btn.active { border-color: var(--primary); color: var(--primary); background: #fff5f5; }
 
+        /* ===== TAB PANELS ===== */
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
         /* ===== CHART ===== */
         .chart-wrap { max-width: 280px; margin: 14px auto; background: #fafbff; border-radius: 8px; padding: 16px; border: 1px solid #eee; }
         .chart-wrap h4 { text-align: center; font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
@@ -508,14 +512,14 @@
 <!-- ===== TAB NAVIGATION ===== -->
 <div class="college-tabs" id="college-tabs">
     <div class="container">
-        <a href="#overview" class="tab-link active">Overview</a>
-        <a href="#courses-fees" class="tab-link">Courses &amp; Fees</a>
-        <a href="#eligibility" class="tab-link">Eligibility &amp; Exams</a>
-        <a href="#admissions" class="tab-link">Admissions 2026-27</a>
-        <a href="#placements" class="tab-link">Placements</a>
-        <a href="#facilities" class="tab-link">Facilities</a>
-        <a href="#contact" class="tab-link">Contact</a>
-        <a href="#reviews" class="tab-link">Reviews</a>
+        <a href="#" class="tab-link active" data-tab="overview">Overview</a>
+        <a href="#" class="tab-link" data-tab="courses-fees">Courses &amp; Fees</a>
+        <a href="#" class="tab-link" data-tab="eligibility">Eligibility &amp; Exams</a>
+        <a href="#" class="tab-link" data-tab="admissions">Admissions 2026-27</a>
+        <a href="#" class="tab-link" data-tab="placements">Placements</a>
+        <a href="#" class="tab-link" data-tab="facilities">Facilities</a>
+        <a href="#" class="tab-link" data-tab="contact">Contact</a>
+        <a href="#" class="tab-link" data-tab="reviews">Reviews</a>
     </div>
 </div>
 
@@ -527,8 +531,10 @@
             <!-- ===== MAIN COLUMN ===== -->
             <main class="main-content">
 
-                <!-- OVERVIEW -->
-                <section class="section-block" id="overview">
+                <!-- ===== TAB: OVERVIEW ===== -->
+                <div class="tab-panel active" data-tab="overview">
+
+                <section class="section-block">
                     <h2>About College - RV College of Engineering Bangalore (RVCE)</h2>
                     <p>Rashtreeya Vidyalaya (RV) College of Engineering Bangalore is one of the leading technical institutes located in the state of Karnataka. It is one of the top private colleges located in Bangalore, Karnataka that is known for its high-quality education, premium infrastructure, and good placements. The RVCE campus is spread across 52 acres.</p>
                     <p>Students can check with the admission office if the university allows payment through both online and offline modes. The total tuition fee for RV College of Engineering courses typically ranges from INR 16,00,000 - 70,00,000, depending on the programme and level of study.</p>
@@ -599,8 +605,12 @@
                     </ul>
                 </section>
 
-                <!-- TOP COURSES -->
-                <section class="section-block" id="courses-fees">
+                </div><!-- /tab-panel overview -->
+
+                <!-- ===== TAB: COURSES & FEES ===== -->
+                <div class="tab-panel" data-tab="courses-fees">
+
+                <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) &ndash; Top Courses</h2>
                     <p>RVCE offers 35 courses spread across 3 major streams. The courses include 12 undergraduate programs and 21 postgraduate programs. A few of the popular courses offered in RV College of Engineering, Mysore Road are:</p>
                     <div class="course-toggle-btns">
@@ -651,8 +661,12 @@
                     <div style="clear:both;"></div>
                 </section>
 
-                <!-- ELIGIBILITY -->
-                <section class="section-block" id="eligibility">
+                </div><!-- /tab-panel courses-fees -->
+
+                <!-- ===== TAB: ELIGIBILITY & EXAMS ===== -->
+                <div class="tab-panel" data-tab="eligibility">
+
+                <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) - Top Courses, Fees &amp; Eligibility</h2>
                     <p>Students who wish to get admission at RV College of Engineering should have minimum marks in the qualifying examination. The eligibility criteria for RVCE courses are as follows:</p>
                     <div class="table-wrap"><table class="data-table">
@@ -681,7 +695,11 @@
                     <div style="clear:both;"></div>
                 </section>
 
-                <!-- RANKINGS -->
+                </div><!-- /tab-panel eligibility -->
+
+                <!-- ===== TAB: ADMISSIONS ===== -->
+                <div class="tab-panel" data-tab="admissions">
+
                 <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) - Rankings and Awards</h2>
                     <ul>
@@ -694,8 +712,12 @@
                     </ul>
                 </section>
 
-                <!-- PLACEMENTS -->
-                <section class="section-block" id="placements">
+                </div><!-- /tab-panel admissions -->
+
+                <!-- ===== TAB: PLACEMENTS ===== -->
+                <div class="tab-panel" data-tab="placements">
+
+                <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) - Placements</h2>
                     <div class="stats-row">
                         <div class="stat-card"><div class="stat-num">90-95%</div><div class="stat-label">Placement Rate</div></div>
@@ -726,7 +748,11 @@
                     <div style="clear:both;"></div>
                 </section>
 
-                <!-- CAMPUS LIFE -->
+                </div><!-- /tab-panel placements -->
+
+                <!-- ===== TAB: FACILITIES ===== -->
+                <div class="tab-panel" data-tab="facilities">
+
                 <section class="section-block">
                     <h2>RV College of Engineering Bangalore (RVCE) - Campus Student Life</h2>
                     <p>The students of RVCE are encouraged to participate in extra-curricular as well as cultural activities in addition to educational activities. The college has NCC and NSS for the benefit of students. Sports activities and cultural events are conducted to encourage all-round development of the students.</p>
@@ -739,7 +765,7 @@
                 </section>
 
                 <!-- FACILITIES -->
-                <section class="section-block" id="facilities">
+                <section class="section-block">
                     <h2>RV College of Engineering (RVCE), Bangalore - Facilities</h2>
                     <ul>
                         <li>The students and staff of RV Engineering college have access to the best infrastructure and facilities.</li>
@@ -753,7 +779,7 @@
                 </section>
 
                 <!-- ENTRANCE EXAMS -->
-                <section class="section-block" id="admissions">
+                <section class="section-block">
                     <h2>Entrance Exams Accepted by RVCE</h2>
                     <p>RV College of Engineering takes admission through the Karnataka Common Entrance Test (K-CET) conducted by the Government of Karnataka through the Karnataka Examination Authority (KEA) or through the Consortium of Medical, Engineering and Dental Colleges of Karnataka (COMEDK) undergraduate test. Management quota admissions are based on academic merit and interview conducted by RVCE.</p>
                 </section>
@@ -797,7 +823,59 @@
                     <p>Submit your DD to the cashier. The application form will open online for filling in your respective details. Print the application form with signatures and photographs. Collect the fee receipt from the cashier.</p>
                 </section>
 
-                <!-- FAQs -->
+                </div><!-- /tab-panel facilities -->
+
+                <!-- ===== TAB: CONTACT ===== -->
+                <div class="tab-panel" data-tab="contact">
+
+                <section class="section-block">
+                    <h3>Contact Vinayaka Consultancy</h3>
+                    <p>For expert admission guidance and counselling for RV College of Engineering:</p>
+                    <div style="display:flex;align-items:center;gap:10px;margin:12px 0;">
+                        <i class="fas fa-phone-alt" style="color:var(--primary);font-size:18px;"></i>
+                        <a href="tel:+918434105777" style="font-size:16px;font-weight:600;color:var(--primary);">+91-84341 05777</a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;margin:12px 0;">
+                        <i class="fas fa-envelope" style="color:var(--primary);font-size:18px;"></i>
+                        <a href="mailto:contact@vinayakaconsultancy.com" style="font-size:14px;color:#444;">contact@vinayakaconsultancy.com</a>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;margin:12px 0;">
+                        <i class="fas fa-map-marker-alt" style="color:var(--primary);font-size:18px;"></i>
+                        <span style="font-size:14px;color:#444;">Bengaluru, Karnataka, India</span>
+                    </div>
+                </section>
+
+                </div><!-- /tab-panel contact -->
+
+                <!-- ===== TAB: REVIEWS ===== -->
+                <div class="tab-panel" data-tab="reviews">
+
+                <section class="section-block">
+                    <h2>Student Reviews</h2>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">V</div>
+                            <div>
+                                <div class="review-name">Vinoth</div>
+                                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <div class="review-text">RV College of Engineering is one of the best colleges in Bangalore. The faculties are very good. R V College of Engineering has excellent infrastructure including an innovation centre which helps students implement their ideas. The college has great placements for all department students.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar">R</div>
+                            <div>
+                                <div class="review-name">Ramesh K Menon</div>
+                                <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <div class="review-text">Sir we are very happy to inform that the service and commitment successfully done &amp; complete &amp; guided us in the right direction. Very thankful for the support throughout the process.</div>
+                    </div>
+                    <a href="#" class="know-more">Read All Reviews</a>
+                    <div style="clear:both;"></div>
+                </section>
+
                 <section class="section-block">
                     <h2>FAQs</h2>
 
@@ -841,6 +919,8 @@
                         <div class="faq-answer"><div class="faq-answer-inner">The fees for engineering colleges in Bangalore through COMEDK is INR 2,01,960.</div></div>
                     </div>
                 </section>
+
+                </div><!-- /tab-panel reviews -->
 
             </main>
 
@@ -1288,34 +1368,29 @@
         }
     });
 
-    // Smooth Scroll for Tabs
+    // Tab Panel Switching
     document.querySelectorAll('.tab-link').forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            var target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                var offset = 130;
-                var pos = target.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top: pos, behavior: 'smooth' });
-            }
+            var tabName = this.getAttribute('data-tab');
+            // Switch active tab
             document.querySelectorAll('.tab-link').forEach(function(t) { t.classList.remove('active'); });
             this.classList.add('active');
-        });
-    });
-
-    // Scroll Spy
-    window.addEventListener('scroll', function() {
-        var sections = document.querySelectorAll('section[id], div[id="reviews"], div[id="contact"]');
-        var current = '';
-        sections.forEach(function(sec) {
-            if (window.scrollY >= sec.offsetTop - 160) {
-                current = sec.getAttribute('id');
+            // Switch active panel
+            document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+            var panel = document.querySelector('.tab-panel[data-tab="' + tabName + '"]');
+            if (panel) panel.classList.add('active');
+            // Scroll to top of content area
+            var contentWrap = document.querySelector('.content-wrap');
+            if (contentWrap) {
+                var stickyH = header.classList.contains('sticky') ? header.offsetHeight : 0;
+                var tabsH = tabs.offsetHeight;
+                var top = contentWrap.offsetTop - stickyH - tabsH;
+                window.scrollTo({ top: top, behavior: 'instant' });
             }
-        });
-        document.querySelectorAll('.tab-link').forEach(function(tab) {
-            tab.classList.remove('active');
-            if (tab.getAttribute('href') === '#' + current) {
-                tab.classList.add('active');
+            // Re-render chart if switching to overview
+            if (tabName === 'overview' && window.ugChartInstance) {
+                window.ugChartInstance.resize();
             }
         });
     });
@@ -1372,7 +1447,7 @@
     window.addEventListener('DOMContentLoaded', function() {
         var ctx = document.getElementById('ugChart');
         if (ctx) {
-            new Chart(ctx, {
+            window.ugChartInstance = new Chart(ctx, {
                 type: 'pie',
                 data: {
                     labels: ['KCET \u2013 45%', 'COMEDK \u2013 30%', 'Management \u2013 25%'],
