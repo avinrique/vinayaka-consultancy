@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayaka Education Consultancy | Top College Admissions in Bangalore</title>
+    <meta name="description" content="Vinayaka Education Consultancy - Expert admission guidance for top engineering colleges and universities in Bangalore. RV College, MSRIT, BMS, DSCE and more.">
+    <meta name="keywords" content="education consultancy Bangalore, college admissions, engineering college admission, Vinayaka consultancy">
+    <meta name="author" content="Vinayaka Education Consultancy">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vinayakaconsultancy.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vinayaka Education Consultancy | Top College Admissions in Bangalore">
+    <meta property="og:description" content="Vinayaka Education Consultancy - Expert admission guidance for top engineering colleges and universities in Bangalore.">
+    <meta property="og:url" content="https://vinayakaconsultancy.com/">
+    <meta property="og:site_name" content="Vinayaka Education Consultancy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vinayaka Education Consultancy | Top College Admissions in Bangalore">
+    <meta name="twitter:description" content="Expert admission guidance for top engineering colleges and universities in Bangalore.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #d6293e;
+            --primary-dark: #b8212f;
+            --navy: #0e2142;
+            --navy2: #1a2a4a;
+            --maxw: 1170px;
+            --text: #333;
+            --text-light: #666;
+            --text-lighter: #999;
+            --bg: #f5f5f5;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 14px; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul, ol { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: var(--maxw); margin: 0 auto; padding: 0 15px; }
+
+        /* ===== TOP BAR ===== */
+        .top-bar { background: var(--navy); color: #fff; font-size: 13px; padding: 8px 0; overflow: hidden; }
+        .top-bar .container { display: flex; justify-content: flex-end; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .top-bar-nav { display: flex; gap: 18px; align-items: center; }
+        .top-bar-nav a { color: #ddd; transition: color .2s; font-size: 13px; }
+        .top-bar-nav a:hover { color: #fff; }
+        .top-bar-phone a { color: #fff; font-weight: 600; font-size: 13px; }
+        .top-bar-phone i { margin-right: 4px; }
+
+        /* ===== MAIN HEADER ===== */
+        .main-header { background: var(--white); padding: 10px 0; border-bottom: 1px solid var(--border); z-index: 1001; position: relative; }
+        .main-header .container { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 8px; }
+        .logo img { height: 44px; border-radius: 4px; }
+        .logo-text { font-size: 22px; font-weight: 700; color: var(--primary); line-height: 1.1; }
+        .logo-text span { display: block; font-size: 9px; font-weight: 400; color: #999; font-style: italic; }
+        .main-header.sticky { position: fixed; top: 0; left: 0; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,.1); animation: slideDown .25s; }
+        @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+        /* ===== CATEGORY NAV ===== */
+        .cat-nav { display: flex; gap: 0; }
+        .cat-nav-item { position: relative; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; transition: color .2s; text-transform: uppercase; letter-spacing: .3px; }
+        .cat-nav-item:hover { color: var(--primary); }
+        .cat-nav-item i { font-size: 9px; margin-left: 3px; }
+        .cat-nav-panel { display: none; position: absolute; top: 100%; left: 0; background: var(--white); min-width: 260px; box-shadow: 0 6px 20px rgba(0,0,0,.12); border-radius: 0 0 6px 6px; padding: 14px; z-index: 999; }
+        .cat-nav-item:hover .cat-nav-panel { display: block; }
+        .cat-nav-panel h4 { font-size: 11px; color: var(--primary); text-transform: uppercase; margin-bottom: 6px; letter-spacing: .5px; }
+        .cat-nav-panel a { display: block; font-size: 12.5px; font-weight: 400; color: #444; padding: 3px 0; text-transform: none; }
+        .cat-nav-panel a:hover { color: var(--primary); }
+
+        /* ===== MOBILE MENU ===== */
+        .mob-trigger { display: none; font-size: 22px; cursor: pointer; color: var(--text); padding: 6px; }
+        .mobile-nav { display: none; position: fixed; top: 0; left: -100%; width: 82%; max-width: 300px; height: 100vh; background: var(--white); z-index: 9999; overflow-y: auto; transition: left .3s; box-shadow: 4px 0 16px rgba(0,0,0,.2); }
+        .mobile-nav.shownav { left: 0; }
+        .mobile-nav-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.45); z-index: 9998; }
+        .mobile-nav-overlay.show { display: block; }
+        .mobile-nav-head { display: flex; justify-content: space-between; align-items: center; padding: 14px; border-bottom: 1px solid #eee; }
+        .mobile-nav-head .close-nav { font-size: 22px; cursor: pointer; color: var(--text); }
+        .mobile-nav a { display: block; padding: 11px 14px; font-size: 13.5px; color: var(--text); border-bottom: 1px solid #f2f2f2; }
+        .mobile-nav a:hover { background: #fef5f5; color: var(--primary); }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section { background: linear-gradient(135deg, #0e2142 0%, #162d55 50%, #1a3a6b 100%); padding: 70px 0 80px; text-align: center; position: relative; overflow: hidden; }
+        .hero-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat; opacity: 1; }
+        .hero-section .container { position: relative; z-index: 1; }
+        .hero-section h1 { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.3; }
+        .hero-section h1 em { color: var(--primary); font-style: normal; }
+        .hero-section .hero-sub { font-size: 17px; color: #c5d0e0; font-weight: 400; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .hero-btns { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .btn-hero { display: inline-block; padding: 13px 34px; border-radius: 4px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; transition: all .2s; border: none; letter-spacing: .5px; }
+        .btn-hero-primary { background: var(--primary); color: #fff; }
+        .btn-hero-primary:hover { background: var(--primary-dark); }
+        .btn-hero-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.4); }
+        .btn-hero-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+        .hero-phone { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 30px; padding: 10px 24px; color: #fff; font-size: 16px; font-weight: 600; }
+        .hero-phone i { color: var(--primary); font-size: 18px; }
+
+        /* ===== COLLEGE CARDS SECTION ===== */
+        .colleges-section { padding: 50px 0 60px; }
+        .section-title { text-align: center; margin-bottom: 36px; }
+        .section-title h2 { font-size: 26px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .section-title p { font-size: 15px; color: var(--text-light); max-width: 550px; margin: 0 auto; }
+        .college-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .college-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+        .college-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.1); transform: translateY(-3px); }
+        .college-card-body { padding: 20px; }
+        .college-card-body h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+        .college-card-body .card-location { font-size: 12.5px; color: var(--text-light); margin-bottom: 14px; }
+        .college-card-body .card-location i { color: var(--primary); margin-right: 4px; font-size: 11px; }
+        .college-card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+        .card-stat { text-align: center; background: #f8f9fc; border-radius: 4px; padding: 8px 4px; }
+        .card-stat .cs-label { font-size: 10px; color: var(--text-lighter); display: block; font-weight: 500; text-transform: uppercase; letter-spacing: .3px; }
+        .card-stat .cs-value { font-size: 13px; color: var(--navy); font-weight: 700; display: block; margin-top: 2px; }
+        .btn-view { display: block; width: 100%; text-align: center; background: var(--white); color: var(--primary); border: 2px solid var(--primary); padding: 9px 0; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; transition: all .2s; }
+        .btn-view:hover { background: var(--primary); color: #fff; }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-section { padding: 50px 0 60px; background: var(--white); }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .why-card { text-align: center; padding: 30px 20px; border: 1px solid var(--border); border-radius: 6px; transition: box-shadow .2s; }
+        .why-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+        .why-card .why-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+        .why-card .why-icon i { font-size: 24px; color: #fff; }
+        .why-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+        .why-card p { font-size: 13.5px; color: var(--text-light); line-height: 1.7; }
+
+        /* ===== CTA BAND ===== */
+        .cta-band { background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); padding: 36px 0; text-align: center; }
+        .cta-band h2 { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .cta-band .cta-phone { color: #c5d0e0; font-size: 16px; margin-bottom: 16px; }
+        .cta-band .cta-phone a { color: #fff; font-weight: 600; }
+        .cta-band .cta-phone i { color: var(--primary); margin-right: 4px; }
+        .btn-apply { display: inline-block; background: var(--primary); color: #fff !important; border: none; padding: 10px 30px; border-radius: 4px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .2s; font-family: 'Poppins', sans-serif; letter-spacing: .5px; }
+        .btn-apply:hover { background: var(--primary-dark); }
+
+        /* ===== FOOTER ===== */
+        .footer { background: #1e1e2e; color: #ccc; padding: 36px 0 0; font-size: 13px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding-bottom: 28px; }
+        .footer h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .3px; }
+        .footer a { color: #bbb; display: block; padding: 3px 0; transition: color .2s; font-size: 12.5px; }
+        .footer a:hover { color: var(--primary); }
+        .footer .contact-line { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 12.5px; color: #bbb; }
+        .footer .contact-line i { color: var(--primary); width: 14px; font-size: 12px; margin-top: 3px; }
+        .footer-bottom { border-top: 1px solid #333; padding: 14px 0; text-align: center; color: #888; font-size: 11.5px; }
+        .footer-links-row { display: flex; gap: 20px; margin-bottom: 10px; }
+        .footer-links-row a { display: inline; }
+
+        /* ===== FLOATING ENQUIRE NOW ===== */
+        .floating-enquire { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 99; writing-mode: vertical-rl; text-orientation: mixed; background: var(--primary); color: #fff; padding: 14px 10px; font-size: 14px; font-weight: 700; cursor: pointer; border-radius: 6px 0 0 6px; box-shadow: -2px 2px 8px rgba(0,0,0,.2); letter-spacing: 1px; transition: padding .2s; }
+        .floating-enquire:hover { padding: 14px 14px; }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; background: var(--primary); color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; display: none; z-index: 98; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+        .scroll-top:hover { background: var(--primary-dark); }
+
+        /* ===== QUICK CONNECT BAR ===== */
+        .quick-connect-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--navy); color: #fff; padding: 10px 0; z-index: 100; display: none; text-align: center; }
+        .quick-connect-bar .container { display: flex; justify-content: center; gap: 14px; align-items: center; }
+        .quick-connect-bar a { color: #fff; font-weight: 600; font-size: 14px; }
+        .quick-connect-bar .qc-btn { background: var(--primary); color: #fff; padding: 8px 24px; border-radius: 4px; font-size: 13px; font-weight: 600; display: inline-block; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; }
+
+        /* ===== MODAL ===== */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.55); z-index: 10000; justify-content: center; align-items: center; }
+        .modal-overlay.show { display: flex; }
+        .modal-dialog { background: var(--white); border-radius: 8px; padding: 28px; max-width: 420px; width: 92%; position: relative; box-shadow: 0 8px 30px rgba(0,0,0,.2); }
+        .modal-dialog h3 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+        .modal-dialog .modal-sub { font-size: 12px; color: #888; margin-bottom: 16px; }
+        .modal-close { position: absolute; top: 10px; right: 14px; font-size: 20px; cursor: pointer; color: #999; background: none; border: none; }
+        .modal-close:hover { color: var(--text); }
+        .modal-dialog .form-group { margin-bottom: 12px; }
+        .modal-dialog input, .modal-dialog select, .modal-dialog textarea {
+            width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; font-family: 'Poppins', sans-serif; color: var(--text); background: var(--white);
+        }
+        .modal-dialog textarea { resize: vertical; min-height: 60px; }
+        .btn-submit { display: block; width: 100%; background: var(--primary); color: #fff; border: none; padding: 10px; border-radius: 4px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'Poppins', sans-serif; transition: background .2s; margin-top: 4px; }
+        .btn-submit:hover { background: var(--primary-dark); }
+
+        /* ===== RESPONSIVE 960px ===== */
+        @media (max-width: 960px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .college-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-section h1 { font-size: 28px; }
+            .hero-section .hero-sub { font-size: 15px; }
+        }
+
+        /* ===== RESPONSIVE 770px (MOBILE) ===== */
+        @media (max-width: 770px) {
+            .top-bar-nav { display: none; }
+            .top-bar .container { justify-content: center; }
+            .cat-nav { display: none; }
+            .mob-trigger { display: block; }
+            .mobile-nav { display: block; }
+            .college-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .why-grid { grid-template-columns: 1fr; gap: 16px; }
+            .hero-section { padding: 50px 0 60px; }
+            .hero-section h1 { font-size: 24px; }
+            .hero-section .hero-sub { font-size: 14px; }
+            .btn-hero { padding: 11px 24px; font-size: 13px; }
+            .hero-phone { font-size: 14px; padding: 8px 18px; }
+            .section-title h2 { font-size: 20px; }
+            .section-title p { font-size: 13px; }
+            .colleges-section { padding: 36px 0 40px; }
+            .why-section { padding: 36px 0 40px; }
+            .cta-band h2 { font-size: 17px; }
+            .floating-enquire { display: none; }
+            .quick-connect-bar { display: block; }
+            .scroll-top { bottom: 60px; right: 14px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        /* ===== RESPONSIVE 480px ===== */
+        @media (max-width: 480px) {
+            .container { padding: 0 10px; }
+            .college-grid { grid-template-columns: 1fr; }
+            .hero-section h1 { font-size: 20px; }
+            .hero-section .hero-sub { font-size: 13px; }
+            .hero-btns { flex-direction: column; gap: 10px; }
+            .btn-hero { width: 100%; text-align: center; }
+            .hero-phone { width: 100%; justify-content: center; }
+            .college-card-stats { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+            .card-stat .cs-label { font-size: 9px; }
+            .card-stat .cs-value { font-size: 11px; }
+            .college-card-body h3 { font-size: 14px; }
+            .btn-apply { font-size: 13px; padding: 8px 22px; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Vinayaka Education Consultancy",
+        "url": "https://vinayakaconsultancy.com/",
+        "description": "Expert admission guidance for top engineering colleges and universities in Bangalore.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bangalore",
+            "addressRegion": "Karnataka",
+            "addressCountry": "IN"
+        },
+        "telephone": "+91-84341 05777",
+        "email": "contact@vinayakaconsultancy.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-84341 05777",
+            "contactType": "admissions",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi", "Kannada"]
+        }
+    }
+    </script>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="container">
+        <nav class="top-bar-nav">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Colleges</a>
+            <a href="#">Blog</a>
+            <a href="#">News</a>
+            <a href="#">Admission 2026-27</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="top-bar-phone">
+            <a href="tel:+918434105777"><i class="fas fa-phone-alt"></i> 91-84341 05777</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MAIN HEADER ===== -->
+<header class="main-header" id="header">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="logo1.png" alt="Vinayaka" onerror="this.style.display='none'">
+            <div class="logo-text">Vinayaka<span>Education Consultancy</span></div>
+        </a>
+        <nav class="cat-nav">
+            <div class="cat-nav-item">Engineering <i class="fas fa-chevron-down"></i>
+                <div class="cat-nav-panel">
+                    <h4>Top Colleges - Bengaluru</h4>
+                    <a href="RV_College.html">RV College of Engineering</a>
+                    <a href="Ramaiah_Institute.html">Ramaiah Institute of Technology (MSRIT)</a>
+                    <a href="BMS_College.html">BMS College of Engineering</a>
+                    <a href="BMSIT.html">BMS Institute of Technology &amp; Management</a>
+                    <a href="Dayananda_Sagar.html">Dayananda Sagar College of Engineering</a>
+                    <a href="Nitte_Meenakshi.html">Nitte Meenakshi Institute of Technology</a>
+                    <a href="Sir_MVIT.html">Sir M. Visvesvaraya Institute of Technology</a>
+                    <a href="Atria_Institute.html">Atria Institute of Technology</a>
+                    <h4 style="margin-top:12px;">Top Private Universities</h4>
+                    <a href="RV_University.html">RV University, Bengaluru</a>
+                    <a href="REVA_University.html">REVA University, Bengaluru</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Management <i class="fas fa-chevron-down"></i>
+                <div class="cat-nav-panel">
+                    <h4>Management Colleges</h4>
+                    <a href="#">Christ University - MBA</a>
+                    <a href="#">Symbiosis, Bangalore</a>
+                    <a href="#">RV Institute of Management</a>
+                    <a href="#">Alliance University</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Law <i class="fas fa-chevron-down"></i>
+                <div class="cat-nav-panel">
+                    <h4>Law Colleges</h4>
+                    <a href="#">Kristu Jayanti College of Law</a>
+                    <a href="#">Christ University - Law</a>
+                    <a href="#">University Law College, Bangalore</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Commerce</div>
+            <div class="cat-nav-item">Medical <i class="fas fa-chevron-down"></i>
+                <div class="cat-nav-panel">
+                    <h4>Medical Colleges</h4>
+                    <a href="#">BGS Global Institute of Medical Science</a>
+                    <a href="#">Jawaharlal Nehru Medical College</a>
+                    <a href="#">Kempegowda Institute of Medical Sciences</a>
+                    <a href="#">M.S. Ramaiah Medical College</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">Dental <i class="fas fa-chevron-down"></i>
+                <div class="cat-nav-panel">
+                    <h4>Dental Colleges</h4>
+                    <a href="#">AECS Maaruti College of Dental Sciences</a>
+                    <a href="#">VS Dental College &amp; Hospital</a>
+                </div>
+            </div>
+            <div class="cat-nav-item">More <i class="fas fa-chevron-down"></i></div>
+        </nav>
+        <div class="mob-trigger" id="mob-trigger"><i class="fas fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- ===== MOBILE NAV ===== -->
+<div class="mobile-nav-overlay" id="mob-overlay"></div>
+<div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-head">
+        <div class="logo-text" style="font-size:18px;color:var(--primary);font-weight:700;">Vinayaka</div>
+        <div class="close-nav" id="close-nav"><i class="fas fa-times"></i></div>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="#">About Us</a>
+    <a href="RV_College.html">RV College of Engineering</a>
+    <a href="Ramaiah_Institute.html">Ramaiah Institute of Technology</a>
+    <a href="BMS_College.html">BMS College of Engineering</a>
+    <a href="Dayananda_Sagar.html">Dayananda Sagar College of Engineering</a>
+    <a href="BMSIT.html">BMS Institute of Technology &amp; Management</a>
+    <a href="RV_University.html">RV University</a>
+    <a href="REVA_University.html">REVA University</a>
+    <a href="Nitte_Meenakshi.html">Nitte Meenakshi Institute of Technology</a>
+    <a href="Sir_MVIT.html">Sir M. Visvesvaraya Institute of Technology</a>
+    <a href="Atria_Institute.html">Atria Institute of Technology</a>
+    <a href="#">Contact Us</a>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Your Trusted <em>Education Consultancy</em> in Bangalore</h1>
+        <p class="hero-sub">Expert admission guidance for top engineering colleges and universities</p>
+        <div class="hero-btns">
+            <a href="#colleges" class="btn-hero btn-hero-primary">Explore Colleges</a>
+            <button class="btn-hero btn-hero-outline apply-trigger">Contact Us</button>
+        </div>
+        <div class="hero-phone">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+918434105777" style="color:#fff;">+91-84341 05777</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COLLEGE CARDS SECTION ===== -->
+<section class="colleges-section" id="colleges">
+    <div class="container">
+        <div class="section-title">
+            <h2>Top Engineering Colleges &amp; Universities</h2>
+            <p>We provide expert admission guidance for these premier institutions</p>
+        </div>
+        <div class="college-grid">
+
+            <!-- Card 1: RV College of Engineering -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>RV College of Engineering</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">1963</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;52 LPA</span>
+                        </div>
+                    </div>
+                    <a href="RV_College.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Ramaiah Institute of Technology -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>Ramaiah Institute of Technology</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">1962</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;50+ LPA</span>
+                        </div>
+                    </div>
+                    <a href="Ramaiah_Institute.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 3: BMS College of Engineering -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>BMS College of Engineering</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">1946</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;50+ LPA</span>
+                        </div>
+                    </div>
+                    <a href="BMS_College.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Dayananda Sagar College of Engineering -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>Dayananda Sagar College of Engineering</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">1979</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;28 LPA</span>
+                        </div>
+                    </div>
+                    <a href="Dayananda_Sagar.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 5: BMS Institute of Technology & Management -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>BMS Institute of Technology &amp; Management</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">2002</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;44 LPA</span>
+                        </div>
+                    </div>
+                    <a href="BMSIT.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 6: RV University -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>RV University</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">2020</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">University</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;30+ LPA</span>
+                        </div>
+                    </div>
+                    <a href="RV_University.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 7: REVA University -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>REVA University</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">2012</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">University</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;40 LPA</span>
+                        </div>
+                    </div>
+                    <a href="REVA_University.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 8: Nitte Meenakshi Institute of Technology -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>Nitte Meenakshi Institute of Technology</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">2001</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;44 LPA</span>
+                        </div>
+                    </div>
+                    <a href="Nitte_Meenakshi.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 9: Sir M. Visvesvaraya Institute of Technology -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>Sir M. Visvesvaraya Institute of Technology</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">1986</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;38 LPA</span>
+                        </div>
+                    </div>
+                    <a href="Sir_MVIT.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+            <!-- Card 10: Atria Institute of Technology -->
+            <div class="college-card">
+                <div class="college-card-body">
+                    <h3>Atria Institute of Technology</h3>
+                    <p class="card-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                    <div class="college-card-stats">
+                        <div class="card-stat">
+                            <span class="cs-label">Estd</span>
+                            <span class="cs-value">2000</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Type</span>
+                            <span class="cs-value">Private</span>
+                        </div>
+                        <div class="card-stat">
+                            <span class="cs-label">Highest</span>
+                            <span class="cs-value">&#8377;32 LPA</span>
+                        </div>
+                    </div>
+                    <a href="Atria_Institute.html" class="btn-view">View Details</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE VINAYAKA ===== -->
+<section class="why-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose Vinayaka?</h2>
+            <p>Trusted by hundreds of students and parents across India</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>Expert Guidance</h3>
+                <p>Personalized counseling for course &amp; college selection</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>End-to-End Support</h3>
+                <p>From application to admission, we handle everything</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Trusted Network</h3>
+                <p>Strong relationships with top colleges in Bangalore</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+    <div class="container">
+        <h2>Need Admission Guidance? Contact Us Today</h2>
+        <p class="cta-phone"><i class="fas fa-phone-alt"></i> <a href="tel:+918434105777">+91-84341 05777</a></p>
+        <button class="btn-apply apply-trigger">Apply Now</button>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>Top Engineering Colleges in Bangalore</h4>
+                <a href="RV_College.html">RV College of Engineering</a>
+                <a href="Ramaiah_Institute.html">MS Ramaiah Institute of Technology</a>
+                <a href="BMS_College.html">BMS College of Engineering</a>
+                <a href="BMSIT.html">BMS Institute of Technology and Management</a>
+                <a href="Dayananda_Sagar.html">Dayananda Sagar College of Engineering</a>
+                <a href="Nitte_Meenakshi.html">Nitte Meenakshi Institute of Technology</a>
+                <a href="Sir_MVIT.html">Sir M Visvesvaraya Institute Of Technology</a>
+                <a href="Atria_Institute.html">Atria Institute of Technology</a>
+            </div>
+            <div>
+                <h4>Top BBA Colleges In Bangalore</h4>
+                <a href="#">Jain University</a>
+                <a href="#">Christ University</a>
+                <a href="#">St.Joseph College</a>
+                <a href="#">Mount Carmel College</a>
+
+                <h4 style="margin-top:20px;">Top MBA Colleges In Bangalore</h4>
+                <a href="#">RV Institute Of Management</a>
+            </div>
+            <div>
+                <h4>Top Universities In Bangalore</h4>
+                <a href="REVA_University.html">REVA University</a>
+                <a href="RV_University.html">RV University</a>
+                <a href="#">Jain University</a>
+                <a href="#">Christ University</a>
+                <a href="#">PES University</a>
+            </div>
+            <div>
+                <h4>Contact Vinayaka</h4>
+                <div class="contact-line"><i class="fas fa-map-marker-alt"></i> <span>Bengaluru, Karnataka, India</span></div>
+                <div class="contact-line"><i class="fas fa-phone-alt"></i> <a href="tel:+918434105777" style="display:inline;color:var(--primary);">+91-84341 05777</a></div>
+                <div class="contact-line"><i class="fas fa-envelope"></i> <a href="mailto:contact@vinayakaconsultancy.com" style="display:inline;">contact@vinayakaconsultancy.com</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-links-row" style="justify-content:center;">
+                <a href="index.html">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+            </div>
+            Copyrights &copy; 2026 Vinayaka Consultancy | All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+<!-- ===== FLOATING ENQUIRE NOW ===== -->
+<div class="floating-enquire apply-trigger">Enquire Now</div>
+
+<!-- ===== SCROLL TO TOP ===== -->
+<button class="scroll-top" id="scroll-top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ===== QUICK CONNECT BAR (MOBILE) ===== -->
+<div class="quick-connect-bar" id="quick-connect">
+    <div class="container">
+        <a href="tel:+918434105777"><i class="fas fa-phone-alt"></i> Call</a>
+        <button class="qc-btn apply-trigger">Enquire Now</button>
+    </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="apply-modal">
+    <div class="modal-dialog">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h3>Admission Open 2026-27</h3>
+        <p class="modal-sub">Get expert guidance from Vinayaka Education Consultancy</p>
+        <form action="#" onsubmit="return false;">
+            <input type="hidden" name="gclid" value="">
+            <div class="form-group">
+                <input type="text" placeholder="NAME">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="EMAIL">
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="PHONE NUMBER">
+            </div>
+            <div class="form-group">
+                <select>
+                    <option value="">Select Your State</option>
+                    <option>Andaman & Nicobar</option>
+                    <option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option>
+                    <option>Assam</option>
+                    <option>Bihar</option>
+                    <option>Chandigarh</option>
+                    <option>Chhattisgarh</option>
+                    <option>Dadra & Nagar Haveli</option>
+                    <option>Daman & Diu</option>
+                    <option>Delhi</option>
+                    <option>Goa</option>
+                    <option>Gujarat</option>
+                    <option>Haryana</option>
+                    <option>Himachal Pradesh</option>
+                    <option>Jammu & Kashmir</option>
+                    <option>Jharkhand</option>
+                    <option>Karnataka</option>
+                    <option>Kerala</option>
+                    <option>Lakshadweep</option>
+                    <option>Madhya Pradesh</option>
+                    <option>Maharashtra</option>
+                    <option>Manipur</option>
+                    <option>Meghalaya</option>
+                    <option>Mizoram</option>
+                    <option>Nagaland</option>
+                    <option>Orissa</option>
+                    <option>Pondicherry</option>
+                    <option>Punjab</option>
+                    <option>Rajasthan</option>
+                    <option>Sikkim</option>
+                    <option>Tamil Nadu</option>
+                    <option>Tripura</option>
+                    <option>Uttar Pradesh</option>
+                    <option>Uttaranchal</option>
+                    <option>West Bengal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select>
+                    <option value="">Select Your City</option>
+                    <option>Bangalore</option>
+                    <option>Chennai</option>
+                    <option>Hyderabad</option>
+                    <option>Mumbai</option>
+                    <option>Delhi</option>
+                    <option>Pune</option>
+                    <option>Kolkata</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select>
+                    <option value="">Select Course</option>
+                    <option>B.E Computer Science and Engineering</option>
+                    <option>B.E Information Science and Engineering</option>
+                    <option>B.E Electronics and Communication Engineering</option>
+                    <option>B.E Mechanical Engineering</option>
+                    <option>B.E Civil Engineering</option>
+                    <option>B.E Electrical and Electronics Engineering</option>
+                    <option>B.E Biotechnology</option>
+                    <option>B.E Chemical Engineering</option>
+                    <option>B.E Electronics and Instrumentation Engineering</option>
+                    <option>B.E Electronics and Telecommunication Engineering</option>
+                    <option>B.E Industrial Engineering and Management</option>
+                    <option>M.Tech</option>
+                    <option>MCA</option>
+                    <option>MBA</option>
+                    <option>BBA</option>
+                    <option>B.Com</option>
+                    <option>B.Sc</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="MESSAGE"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Sticky Header
+    var header = document.getElementById('header');
+    var headerH = header.offsetHeight;
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= 100) {
+            header.classList.add('sticky');
+            document.body.style.paddingTop = headerH + 'px';
+        } else {
+            header.classList.remove('sticky');
+            document.body.style.paddingTop = '0';
+        }
+    });
+
+    // Mobile Menu
+    document.getElementById('mob-trigger').addEventListener('click', function() {
+        document.getElementById('mobile-nav').classList.add('shownav');
+        document.getElementById('mob-overlay').classList.add('show');
+    });
+    document.getElementById('close-nav').addEventListener('click', closeMobileNav);
+    document.getElementById('mob-overlay').addEventListener('click', closeMobileNav);
+    function closeMobileNav() {
+        document.getElementById('mobile-nav').classList.remove('shownav');
+        document.getElementById('mob-overlay').classList.remove('show');
+    }
+
+    // Modal
+    function openModal() {
+        document.getElementById('apply-modal').classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        document.getElementById('apply-modal').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.apply-trigger').forEach(function(btn) {
+        btn.addEventListener('click', openModal);
+    });
+    document.getElementById('apply-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    // Scroll to Top
+    var scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', function() {
+        scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Google Ads GCLID Capture
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var gclid = params.get('gclid');
+        if (gclid) {
+            document.querySelectorAll('input[name="gclid"]').forEach(function(el) {
+                el.value = gclid;
+            });
+            try { sessionStorage.setItem('gclid', gclid); } catch(e) {}
+        } else {
+            try {
+                var stored = sessionStorage.getItem('gclid');
+                if (stored) {
+                    document.querySelectorAll('input[name="gclid"]').forEach(function(el) {
+                        el.value = stored;
+                    });
+                }
+            } catch(e) {}
+        }
+    })();
+</script>
+
+</body>
+</html>
